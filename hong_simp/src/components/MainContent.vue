@@ -1,16 +1,32 @@
 <template>
   <div id="example-table"></div>
+  <button @click="start">버튼</button>
 </template>
 
 <script>
 export default {
   name: 'MainContent',
   props: {
-  }
+  },
+  methods: {
+    start() {
+        axios({
+                url: "http://localhost:3000/",
+                method: "GET",
+            }).then(res => {
+                console.log(res);
+                alert(res.data);
+            }).catch(err => {
+                alert(err);
+        });
+    }
+  },
 }
 
 import {TabulatorFull as Tabulator} from 'tabulator-tables';
 import  "tabulator-tables/dist/css/tabulator.min.css";
+
+import axios from 'axios'
 
 var tabledata = [
     {id:1, name:"Oli Bob", progress:12, gender:"male", rating:1, col:"red", dob:"19/02/1984", car:1},

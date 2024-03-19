@@ -15,6 +15,7 @@ export default {
     MainHeader, MainContent, MainFooter
   }
 }
+
 </script>
 
 <style>
